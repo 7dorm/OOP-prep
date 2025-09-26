@@ -288,41 +288,41 @@ Map.of("k1", 1, "k2", 2)
 ```
 Throwable
 ├─ Error
-│   ├─ VirtualMachineError
-│   │   ├─ OutOfMemoryError
-│   │   ├─ StackOverflowError
-│   │   └─ InternalError
-│   ├─ LinkageError
-│   │   ├─ NoClassDefFoundError
-│   │   ├─ ClassFormatError
-│   │   └─ UnsatisfiedLinkError
-│   ├─ AssertionError
-│   └─ ThreadDeath
+│   ├─ VirtualMachineError - ошибка виртуальной машины
+│   │   ├─ OutOfMemoryError - недостаточно памяти в heap
+│   │   ├─ StackOverflowError - переполнение стека
+│   │   └─ InternalError - внутренная ошибка JVM
+│   ├─ LinkageError - проблемы с загрузкой/связкой классов
+│   │   ├─ NoClassDefFoundError - класс не найден
+│   │   ├─ ClassFormatError - некорректный формат .class
+│   │   └─ UnsatisfiedLinkError - не удалось подключить натвиную библиотеку
+│   ├─ AssertionError - неудачная проверка assert
+│   └─ ThreadDeath - Поток завершён с помощью stop()
 │
 └─ Exception
-    ├─ IOException
-    │   ├─ FileNotFoundException
-    │   ├─ EOFException
-    │   └─ SocketException
-    ├─ SQLException
-    ├─ ClassNotFoundException
-    ├─ InterruptedException
-    ├─ ReflectiveOperationException
-    │   ├─ IllegalAccessException
-    │   ├─ InvocationTargetException
-    │   └─ InstantiationException
-    ├─ RuntimeException
-    │   ├─ NullPointerException
-    │   ├─ IndexOutOfBoundsException
-    │   │   ├─ ArrayIndexOutOfBoundsException
-    │   │   └─ StringIndexOutOfBoundsException
-    │   ├─ IllegalArgumentException
-    │   │   └─ NumberFormatException
-    │   ├─ IllegalStateException
-    │   ├─ ArithmeticException
-    │   ├─ ClassCastException
-    │   ├─ UnsupportedOperationException
-    │   └─ ConcurrentModificationException
+    ├─ IOException - ошибки I/O
+    │   ├─ FileNotFoundException - файл не найден
+    │   ├─ EOFException - конец потока достигнут неожиданно
+    │   └─ SocketException - ошибка сокета
+    ├─ SQLException - ошибка работы с БД
+    ├─ ClassNotFoundException - класс не найден при динамической загрузке
+    ├─ InterruptedException - поток был прерван во премя ожидания
+    ├─ ReflectiveOperationException - ошибки при рефлексии
+    │   ├─ IllegalAccessException - доступ к классу/методу/полю запрещён
+    │   ├─ InvocationTargetException - вызов метода через reflection вызвал исключение
+    │   └─ InstantiationException - нельзя создать экземпляр класса 
+    ├─ RuntimeException - unchecked исключения, часто ошибки логики
+    │   ├─ NullPointerException - обращение к null
+    │   ├─ IndexOutOfBoundsException - индекс вне допустимого диапазона
+    │   │   ├─ ArrayIndexOutOfBoundsException - индекс массива
+    │   │   └─ StringIndexOutOfBoundsException - индекс строки
+    │   ├─ IllegalArgumentException - неправильный аргумент метода
+    │   │   └─ NumberFormatException - ошибка преобразования строки в число Integer.valueOf();
+    │   ├─ IllegalStateException - метод вызван в некорректном состоянии объекта
+    │   ├─ ArithmeticException - арифметическая ошибка
+    │   ├─ ClassCastException - неправильное приведение типов
+    │   ├─ UnsupportedOperationException - операция не поддерживается (неизменяемая коллекция)
+    │   └─ ConcurrentModificationException -  коллекция изменялась во время итерации
     └─ (другие checked)
 ```
 
